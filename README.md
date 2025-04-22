@@ -2,16 +2,63 @@
 
 <p id="description">API for returning Indian college information</p>
 
-<h2>API Structure:</h2>
+## 📘 Endpoints
 
-<img src="https://i.imgur.com/2tFUPWr.png" alt="project-screenshot" width="400" height="400/">
+### 🔍 `GET /colleges`
 
-<img src="https://i.imgur.com/OcaUQiJ.png" alt="project-screenshot" width="400" height="400/">
+Retrieve a list of colleges based on filters.
 
-<h2> Available Endpoints</h2>
+#### Query Parameters
 
-- 1\. /colleges?state=&district=&collegename=&universityname=&type=
-- 1\. /colleges/{id}
+| Name           | Type     | Description                                 |
+|----------------|----------|---------------------------------------------|
+| `state`        | `string` | State name (fuzzy match)                    |
+| `district`     | `string` | District name (fuzzy match)                 |
+| `collegename`  | `string` | College name (fuzzy match)                  |
+| `universityname` | `string` | University name (fuzzy match)              |
+| `type`         | `string` | College type (fuzzy match ex:affiliated)    |
+| `page`         | `integer`| Page number (pagination)                    |
+| `size`         | `integer`| Results per page (pagination)               |
+
+#### Response
+
+```json
+[
+  {
+    "id": 1,
+    "universityName": "University of Example",
+    "collegeName": "Example College",
+    "collegeType": "Government",
+    "state": "Karnataka",
+    "district": "Bangalore"
+  }
+]
+```
+
+---
+
+### 📄 `GET /colleges/{id}`
+
+Retrieve a single college by its ID.
+
+#### Path Parameters
+
+| Name   | Type     | Description             |
+|--------|----------|-------------------------|
+| `id`   | `integer`| ID of the college        |
+
+#### Response
+
+```json
+{
+  "id": 1,
+  "universityName": "University of Example",
+  "collegeName": "Example College",
+  "collegeType": "Government",
+  "state": "Karnataka",
+  "district": "Bangalore"
+}
+```
 
 <h2>🛠️ Installation Steps:</h2>
 <p>1. clone repo</p>
