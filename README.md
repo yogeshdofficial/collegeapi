@@ -26,7 +26,13 @@ git clone http:github.com/yogeshdofficial/collegeapi.
 cd collegeapi
 ```
 
-<p>3. install docker compose and execute</p>
+<p>4. compile the jar</p>
+
+```
+./mvnw clean package -DskipTests
+```
+
+<p>4. install docker compose and execute</p>
 
 ```
 docker compose up -d java_app
